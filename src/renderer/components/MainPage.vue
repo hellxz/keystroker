@@ -13,33 +13,33 @@
     <div id="tips-label">
         <div>
             当前速度:
-            <label id="cur-speed">500</label>
+            <label id="cur-speed"><bold>220</bold></label>
         </div>
         <div>
             击键:
-            <label id="cur-stroke">500</label>
+            <label id="cur-stroke">8.3</label>
         </div>
         <div>
             码长:
-            <label id="key-length">500</label>
+            <label id="key-length">2.3</label>
         </div>
         <div>
             平均击键:
-            <label id="svg-stroke">500</label>
+            <label id="svg-stroke">8.1</label>
         </div>
         <div>
             平均码长:
-            <label id="svg-key-length">500</label>
+            <label id="svg-key-length">2.4</label>
         </div>
     </div>
 
     <div class="textarea-split">
         <Split v-model="split2" mode="vertical">
             <div slot="top" class="split-pane" >
-                <textarea id="control-area" readonly>{{this.article}}</textarea>
+                <textarea id="control-area" placeholder="对照区 \n按F3载文" readonly>{{this.article}}</textarea>
             </div>
             <div slot="bottom" class="split-pane">
-                <textarea id="follow-stroke-area">跟打区</textarea>
+                <textarea id="follow-stroke-area">在工作或学习中遇到不开心的时候，</textarea>
             </div>
         </Split>
     </div>
@@ -59,15 +59,15 @@
         </div>
         <div>
             <label>总字数</label>:
-            <label id="total-words">972</label>字
+            <label id="total-words">839</label>字
         </div>
         <div>
             <label>当前进度</label>:
-            <label id="cur-rate">1</label>％
+            <label id="cur-rate">3</label>％
         </div>
         <div>
             <label>编码提示</label>:
-            <label id="encoding-prompt">lkim</label>
+            <label id="encoding-prompt">不妨givy</label>
         </div>
         <div>
             <label>当前编码</label>:
@@ -142,6 +142,7 @@ export default {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: lightgray;
 }
 
 #wrapper {
@@ -168,6 +169,7 @@ export default {
     padding-left: 0.42rem;
     padding-right: 0.42rem;
     font-size: 1rem;
+    color: #000;
 }
 
 #menu-bar div:first-child {
@@ -183,6 +185,7 @@ export default {
     position: relative;
     display: inline;
     margin-right: 0.83rem;
+    color: lightslategray;
     border: springgreen solid thin;
     border-radius: 8px;
     padding: 15px 10px;
@@ -197,6 +200,8 @@ export default {
     font-size: 30px;
     bottom: 30px;
     border: 1px solid #dcdee2;
+    line-height: normal;
+    font-size: 2rem;
 }
 .split-pane{
     width: 100%;
@@ -206,7 +211,6 @@ export default {
 #control-area {
     width: 100%;
     height: 100%;
-    font-size: 3rem;
     outline: 0 none;
     border-color: rgba(248, 9, 69, 0.8);
     overflow: visible;
@@ -217,7 +221,6 @@ export default {
 #follow-stroke-area {
     width: 100%;
     height: 100%;
-    font-size: 3rem;
     outline: 0 none;
     border-color: rgba(82, 168, 236, 0.8);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
