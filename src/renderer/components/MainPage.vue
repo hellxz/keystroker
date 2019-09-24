@@ -1,5 +1,5 @@
 <template>
-<div id="wrapper"><!--窗口最窄1202px-->
+<div id="wrapper">
     <div id="menu-bar">
         <div id="menu-btn" @click="openMenu">菜单</div>
         <div id="load-article-btn" @click="showLoadPanel">载文</div>
@@ -32,17 +32,18 @@
             <label id="svg-key-length">500</label>
         </div>
     </div>
-    <div id="text-viewpoint">
-        <div class="text-div">
-            <textarea id="control-area" readonly >对照区</textarea>
-        </div>
-        <div id="control-bar">
-            …
-        </div>
-        <div class="text-div">
-            <textarea id="follow-stroke-area">跟打区</textarea>
-        </div>
+
+    <div class="textarea-split">
+        <Split v-model="split2" mode="vertical">
+            <div slot="top" class="split-pane" >
+                <textarea id="control-area" readonly>对照区</textarea>
+            </div>
+            <div slot="bottom" class="split-pane">
+                <textarea id="follow-stroke-area">跟打区</textarea>
+            </div>
+        </Split>
     </div>
+
     <div id="msg-tips">
         <div>
             <label>当前QQ群</label>:
@@ -82,6 +83,11 @@
 export default {
   name: 'main-page',
   components: {},
+  data () {
+    return {
+      split2: 0.5
+    }
+  },
   methods: {
     open (link) {
       this.$electron.shell.openExternal(link)
@@ -109,6 +115,13 @@ export default {
     },
     help () {
       alert('帮助')
+    },
+    changeTextAreaSizeStart (e) {
+      console.log(e)
+    },
+    changeTextAreaSize (e) {
+      console.log('拖动完成')
+      console.log(e)
     }
   }
 }
@@ -123,12 +136,6 @@ export default {
     padding: 0;
 }
 
-body {
-    font-family: "微软雅黑", "思源黑体", "Source Sans Pro", sans-serif;
-    line-height: 1;
-    font-size: 1.14rem;
-}
-
 #wrapper {
     position: absolute;
     left: 10px;
@@ -137,6 +144,9 @@ body {
     bottom: 0px;
     min-width: 895px;
     min-height: 400px;
+    font-family: "微软雅黑", "思源黑体", "Source Sans Pro", sans-serif;
+    line-height: 1;
+    font-size: 1.14rem;
 }
 
 #menu-bar {
@@ -149,6 +159,7 @@ body {
     display: inline;
     padding-left: 0.42rem;
     padding-right: 0.42rem;
+    font-size: 1rem;
 }
 
 #menu-bar div:first-child {
@@ -170,19 +181,18 @@ body {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(98, 238, 16, 0.6);
 }
 
-#text-viewpoint {
+.textarea-split{
     position: fixed;
     left: 10px;
     right: 10px;
     top: 6.3rem;
     font-size: 30px;
     bottom: 30px;
+    border: 1px solid #dcdee2;
 }
-
-#text-viewpoint .text-div {
-    height: 49.5%;
-    font-size: 3rem;
-    line-height: none;
+.split-pane{
+    width: 100%;
+    height: 100%;
 }
 
 #control-area {
@@ -196,14 +206,6 @@ body {
     resize: none;
 }
 
-#control-bar {
-    width: 100%;
-    height: 1%;
-    color: rgba(99, 94, 94, 0.521);
-    text-align: center;
-    line-height: 1px;
-}
-
 #follow-stroke-area {
     width: 100%;
     height: 100%;
@@ -213,12 +215,11 @@ body {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
     resize:none;
     overflow: hidden;
-    
 }
 
 #msg-tips {
     position: fixed;
-    bottom: 5px;
+    bottom: 10px;
     font-size: 1rem;
     height: 1rem;
 }
@@ -231,10 +232,5 @@ body {
 
 #encoding-prompt {
     color: red
-}
-
-.doc button.alt {
-    color: #42b983;
-    background-color: transparent;
 }
 </style>
