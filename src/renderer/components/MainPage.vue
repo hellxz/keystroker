@@ -115,24 +115,24 @@ body {
 
 #menu-bar {
     position: relative;
-    margin-bottom: 1.25em;
+    margin-bottom: 1.25rem;
 }
 
 #menu-bar div {
   position: relative;
   display: inline-table;
-  margin-right: 0.83em;
+  margin-right: 0.83rem;
 }
 
 #tips-label {
     position: relative;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 
 #tips-label div {
   position: relative;
   display: inline-table;
-  margin-right: 0.5em;
+  margin-right: 0.5rem;
 }
 
 #text-viewpoint {
@@ -167,7 +167,7 @@ body {
 #msg-tips div {
   position: relative;
   display: inline-table;
-  margin-right: 0.5em;
+  margin-right: 0.5rem;
 }
 
 #encoding-prompt {
