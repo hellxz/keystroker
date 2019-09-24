@@ -1,14 +1,14 @@
 <template>
 <div id="wrapper"><!--窗口最窄1202px-->
     <div id="menu-bar">
-        <div id="menu-btn">菜单</div>
-        <div id="load-article-btn">载文</div>
-        <div id="send-article-btn">发文</div>
-        <div id="switch-qgroup-btn">换群</div>
-        <div id="send-score-btn">发送成绩</div>
-        <div id="history-record-btn">历史记录</div>
-        <div id="keyboard-shortcuts-btn">快捷键</div>
-        <div id="help-btn">帮助</div>
+        <div id="menu-btn" @click="openMenu">菜单</div>
+        <div id="load-article-btn" @click="showLoadPanel">载文</div>
+        <div id="send-article-btn" @click="sendArticle">发文</div>
+        <div id="switch-qgroup-btn" @click="changeQqGroup">换群</div>
+        <div id="send-score-btn" @click="sendScore">发送成绩</div>
+        <div id="history-record-btn" @click="showHistory">历史记录</div>
+        <div id="keyboard-shortcuts-btn" @click="showKeyboardShotcuts">快捷键</div>
+        <div id="help-btn" @click="help">帮助</div>
     </div>
     <div id="tips-label">
         <div>
@@ -85,6 +85,30 @@ export default {
   methods: {
     open (link) {
       this.$electron.shell.openExternal(link)
+    },
+    openMenu () {
+      alert('打开设置窗口')
+    },
+    showLoadPanel () {
+      alert('载文')
+    },
+    sendArticle () {
+      alert('发文')
+    },
+    changeQqGroup () {
+      alert('换群')
+    },
+    sendScore () {
+      alert('发送成绩')
+    },
+    showHistory () {
+      alert('跟打历史')
+    },
+    showKeyboardShotcuts () {
+      alert('快捷键展示')
+    },
+    help () {
+      alert('帮助')
     }
   }
 }
@@ -140,11 +164,10 @@ body {
     position: relative;
     display: inline;
     margin-right: 0.83rem;
-    /* outline-color: springgreen;
-    outline-width: 0.15rem;
-    outline-style: solid; */
-    outline: springgreen solid thin;
+    border: springgreen solid thin;
+    border-radius: 8px;
     padding: 15px 10px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(98, 238, 16, 0.6);
 }
 
 #text-viewpoint {
@@ -158,6 +181,8 @@ body {
 
 #text-viewpoint .text-div {
     height: 49.5%;
+    font-size: 3rem;
+    line-height: none;
 }
 
 #control-area {
