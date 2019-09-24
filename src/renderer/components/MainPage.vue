@@ -17,19 +17,19 @@
         </div>
         <div>
             击键:
-            <label id="cur-speed">500</label>
+            <label id="cur-stroke">500</label>
         </div>
         <div>
             码长:
-            <label id="cur-speed">500</label>
+            <label id="key-length">500</label>
         </div>
         <div>
             平均击键:
-            <label id="cur-speed">500</label>
+            <label id="svg-stroke">500</label>
         </div>
         <div>
             平均码长:
-            <label id="cur-speed">500</label>
+            <label id="svg-key-length">500</label>
         </div>
     </div>
     <div id="text-viewpoint">
@@ -37,7 +37,6 @@
             <textarea id="control-area" readonly >对照区</textarea>
         </div>
         <div id="control-bar">
-            <!--准备放张小图片-->
             …
         </div>
         <div class="text-div">
@@ -95,36 +94,41 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: "微软雅黑", "思源黑体", "Source Sans Pro", sans-serif;
-  line-height: 1;
-  font-size: 1.14rem;
+    font-family: "微软雅黑", "思源黑体", "Source Sans Pro", sans-serif;
+    line-height: 1;
+    font-size: 1.14rem;
 }
 
 #wrapper {
-  position: absolute;
-  left: 10px;
-  top: 0px;
-  right: 10px;
-  bottom: 0px;
-  min-width: 878px;
-  min-height: 500px;
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    right: 10px;
+    bottom: 0px;
+    min-width: 895px;
+    min-height: 400px;
 }
 
 #menu-bar {
     position: relative;
-    margin-bottom: 1.25rem;
+    margin-bottom: 2.25rem;
 }
 
 #menu-bar div {
-  position: relative;
-  display: inline-table;
-  margin-right: 0.83rem;
+    position: relative;
+    display: inline;
+    padding-left: 0.42rem;
+    padding-right: 0.42rem;
+}
+
+#menu-bar div:first-child {
+    padding-left: 0;
 }
 
 #tips-label {
@@ -133,9 +137,14 @@ body {
 }
 
 #tips-label div {
-  position: relative;
-  display: inline-table;
-  margin-right: 0.5rem;
+    position: relative;
+    display: inline;
+    margin-right: 0.83rem;
+    /* outline-color: springgreen;
+    outline-width: 0.15rem;
+    outline-style: solid; */
+    outline: springgreen solid thin;
+    padding: 15px 10px;
 }
 
 #text-viewpoint {
@@ -156,16 +165,16 @@ body {
     height: 100%;
     font-size: 3rem;
     outline: 0 none;
-    border-color: rgba(82, 168, 236, 0.8);
+    border-color: rgba(248, 9, 69, 0.8);
     overflow: visible;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(248, 9, 69, 0.6);
     resize: none;
 }
 
 #control-bar {
     width: 100%;
     height: 1%;
-    color: rgba(51, 39, 39, 0.521);
+    color: rgba(99, 94, 94, 0.521);
     text-align: center;
     line-height: 1px;
 }
@@ -190,9 +199,9 @@ body {
 }
 
 #msg-tips div {
-  position: relative;
-  display: inline-table;
-  margin-right: 0.5rem;
+    position: relative;
+    display: inline-table;
+    margin-right: 0.5rem;
 }
 
 #encoding-prompt {
@@ -200,7 +209,7 @@ body {
 }
 
 .doc button.alt {
-  color: #42b983;
-  background-color: transparent;
+    color: #42b983;
+    background-color: transparent;
 }
 </style>
