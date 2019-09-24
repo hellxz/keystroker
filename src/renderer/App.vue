@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'Key Stroker'
+    name: 'App'
   }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-<div id="wrapper"><!--窗口最窄876px-->
+<div id="wrapper"><!--窗口最窄1202px-->
     <div id="menu-bar">
         <div id="menu-btn">菜单</div>
         <div id="load-article-btn">载文</div>
@@ -35,6 +35,9 @@
     <div id="text-viewpoint">
         <div>
             <textarea id="control-area">对照区</textarea>
+        </div>
+        <div id="control-bar">
+            <!--准备放张小图片-->
         </div>
         <div>
             <textarea id="follow-stroke-area">跟打区</textarea>
@@ -98,7 +101,8 @@ export default {
 
 body {
   font-family: "微软雅黑", "思源黑体", "Source Sans Pro", sans-serif;
-  line-height: 1
+  line-height: 1;
+  font-size: 1.38rem;
 }
 
 #wrapper {
@@ -108,39 +112,64 @@ body {
   right: 10px;
   bottom: 0px;
 }
+
 #menu-bar {
     position: relative;
     margin-bottom: 1.25em;
 }
+
 #menu-bar div {
   position: relative;
   display: inline-table;
   margin-right: 0.83em;
 }
+
 #tips-label {
     position: relative;
     margin-bottom: 2em;
 }
+
 #tips-label div {
   position: relative;
   display: inline-table;
   margin-right: 0.5em;
 }
+
 #text-viewpoint {
     position: relative;
+    width: 100%;
+    height: 50%;
+    font-size: 30px;
 }
+
 #control-area {
-    
+    width: 100%;
+    height: 48.5%;
+    font-size: 3rem;
 }
+
+#control-bar {
+    width: 100%;
+    height: 1%;
+}
+
+#follow-stroke-area {
+    width: 100%;
+    height: 48.5%;
+    font-size: 3rem;
+}
+
 #msg-tips {
     position: absolute;
     bottom: 5px;
 }
+
 #msg-tips div {
   position: relative;
   display: inline-table;
   margin-right: 0.5em;
 }
+
 #encoding-prompt {
     color: red
 }
