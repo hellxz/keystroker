@@ -33,13 +33,14 @@
         </div>
     </div>
     <div id="text-viewpoint">
-        <div>
-            <textarea id="control-area">对照区</textarea>
+        <div class="text-div">
+            <textarea id="control-area" readonly >对照区</textarea>
         </div>
         <div id="control-bar">
             <!--准备放张小图片-->
+            …
         </div>
-        <div>
+        <div class="text-div">
             <textarea id="follow-stroke-area">跟打区</textarea>
         </div>
     </div>
@@ -102,7 +103,7 @@ export default {
 body {
   font-family: "微软雅黑", "思源黑体", "Source Sans Pro", sans-serif;
   line-height: 1;
-  font-size: 1.38rem;
+  font-size: 1.14rem;
 }
 
 #wrapper {
@@ -111,6 +112,8 @@ body {
   top: 0px;
   right: 10px;
   bottom: 0px;
+  min-width: 878px;
+  min-height: 500px;
 }
 
 #menu-bar {
@@ -136,32 +139,54 @@ body {
 }
 
 #text-viewpoint {
-    position: relative;
-    width: 100%;
-    height: 50%;
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    top: 6.3rem;
     font-size: 30px;
+    bottom: 30px;
+}
+
+#text-viewpoint .text-div {
+    height: 49.5%;
 }
 
 #control-area {
     width: 100%;
-    height: 48.5%;
+    height: 100%;
     font-size: 3rem;
+    outline: 0 none;
+    border-color: rgba(82, 168, 236, 0.8);
+    overflow: visible;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    resize: none;
 }
 
 #control-bar {
     width: 100%;
     height: 1%;
+    color: rgba(51, 39, 39, 0.521);
+    text-align: center;
+    line-height: 1px;
 }
 
 #follow-stroke-area {
     width: 100%;
-    height: 48.5%;
+    height: 100%;
     font-size: 3rem;
+    outline: 0 none;
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    resize:none;
+    overflow: hidden;
+    
 }
 
 #msg-tips {
-    position: absolute;
+    position: fixed;
     bottom: 5px;
+    font-size: 1rem;
+    height: 1rem;
 }
 
 #msg-tips div {
